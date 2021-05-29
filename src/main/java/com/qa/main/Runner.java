@@ -37,30 +37,27 @@ public class Runner {
 					scanner.nextLine();
 					System.out.println("Enter new name for this Costumer id");
 					String uName = scanner.nextLine();
-					dbCon.update(uId,uName);
+					dbCon.update(uId, uName);
 					break;
-                case 5:
+				case 5:
 					System.out.println("Enter id of Costumer you'd like to delete");
 					int dId = scanner.nextInt();
 					scanner.nextLine();
 					dbCon.delete(dId);
 					break;
-
 				}
-            action = getAction();
-            actionInt = Integer.parseInt(action);
+				action = getAction();
+				actionInt = Integer.parseInt(action);
 			} while (actionInt != 6);
-		System.out.println("\nHave a nice day!");
+			System.out.println("\nHave a nice day!");
 		} finally {
 			scanner.close();
 			dbCon.tearDown();
 
 		}
-
 	}
 
 	private static String getAction() {
-
 		String menu = "\n\nWELCOME TO THE INTERNAL COSTUMER DATABASE \n\n" + "1 - Create new Costumer \n"
 				+ "2 - Read all Costumers  \n" + "3 - Read One Costumer   \n" + "4 - Update Costumer   \n"
 				+ "5 - Delete Costumer   \n" + "6 - Exit \n\n"
@@ -71,15 +68,7 @@ public class Runner {
 		return scanner.nextLine().toLowerCase();
 
 	}
-  
-  
-	  
-	  
-	  
-  }
 
-
-
-
+}
 
 
